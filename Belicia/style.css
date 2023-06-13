@@ -1,0 +1,26 @@
+.body {
+    background-image: url("/Users/ares/Project_1/Nebulas_Fables/assets/Images/Nebula_picture.jpg"); 
+    height: 50px;
+    background-size: cover;
+  }
+    
+#nav{
+    box-sizing: border-box;
+    background-color: black;
+    height: auto;
+    text-align: left;
+}
+
+#nav ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#nav li{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+    text-align: left;
+    text-size-adjust: 300px;
+}
