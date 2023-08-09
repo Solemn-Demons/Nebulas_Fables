@@ -55,7 +55,7 @@ $("#user-input").keyup(function (event) {
 function search(userInput) {
   //var to auto add constellation to end of user search input
   //var constellation = "%20constellation";
-  // var nasaApiKey = "kSgH3akh7Qaqauv7AbKZyRc6pQjxcfVEOlObfDDl"; i dont think we need api key but will keep in just incase we do need it later
+  
   var nasaImageUrl = "https://images-api.nasa.gov/search?q=" + userInput;
   $.ajax({
     url: nasaImageUrl,
