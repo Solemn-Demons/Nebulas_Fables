@@ -16,8 +16,13 @@ const hbs = exphbs.create({ helpers });
 
 const sesh = {
   //need to create cookie params
-  secret: "",
-  cookie: {},
+  secret: env.get("SESSION_SECRET"),
+  cookie: {
+    maxage: 600000,
+    httpOnly: true,
+    secure: false,
+    sameSite: "strict",
+  },
   reseave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
