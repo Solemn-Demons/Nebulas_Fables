@@ -3,7 +3,7 @@ const userRoutes = require('./userRoutes');
 const mythosRoutes = require('./mythos-routes');
 const starchartRoutes = require ('./starchart-routes');
 
-router.use('./user', userRoutes);
+router.use('./login', userRoutes);
 router.use('/mythos', mythosRoutes);
 router.use('/starchart', starchartRoutes);
 
