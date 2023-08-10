@@ -3,6 +3,8 @@ const seedStar = require('./star-seeds');
 const seedUser = require('./user-seeds');
 
 const sequelize = require('../config/connection');
+const seedFacts = require('./facts-seeds');
+const seedConstellation = require('./constellation-seeds');
 
 
 const seedAll = async () => {
@@ -12,7 +14,13 @@ const seedAll = async () => {
     console.log('\n----- MYTHOS SEEDED -----\n');
   
     await seedStar();
-    console.log('\n----- STARCHART SEEDED -----\n');
+    console.log('\n----- STAR SEEDED -----\n');
+
+    await seedConstellation();
+    console.log('\n----- CONSTELLATION SEEDED -----\n');
+
+    await seedFacts();
+    console.log('\n----- FACTS SEEDED -----\n');
   
     await seedUser();
     console.log('\n----- USER SEEDED -----\n');

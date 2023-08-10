@@ -2,10 +2,11 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Starchart extends Model {}
+class Star extends Model {}
 
+///constellations:  id constellation_name //stars id str name refernec constellation id //information 
 
-Starchart.init(
+Star.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -27,4 +28,4 @@ Starchart.init(
       }
 );
 
-module.exports = Starchart;
+module.exports = Star;

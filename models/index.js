@@ -4,12 +4,15 @@
 
 const User = require('./User');
 const Mythos = require('./Mythos');
-const Starchart = require('./Starchart');
-
+const Star = require('./Star');
+const Constellation = require('./Constellation');
+const Facts = require('./Facts');
 
 
 module.exports = {
     User,
     Mythos,
-    Starchart,
+    Star,
+    Constellation,
+    Facts,
 };

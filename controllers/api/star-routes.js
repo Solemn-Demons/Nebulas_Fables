@@ -26,3 +26,5 @@ router.get('/:id', (req, res) => {
 router.post()
 
 router.delete()
+
+module.exports = router;
