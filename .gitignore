@@ -1,0 +1,14 @@
+.DS_Store
+/node_modules
+node 
+nodemon
+bycrypt
+sequalize
+mysql2
+express
+regex
+express-handlebars
+express-session
+handlebars
+dotenv
+connect-session-sequalize
