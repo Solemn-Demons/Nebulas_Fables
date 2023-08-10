@@ -1,6 +1,8 @@
 const { Mythos } = require('../models');
 
-const mythosData = [];
+const mythosData = [
+    
+];
 
 
 const seedMythos = () => Mythos.bulkCreate(mythosData);
