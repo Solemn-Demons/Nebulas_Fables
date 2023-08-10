@@ -22,3 +22,7 @@ router.get('/:id', (req, res) => {
     res.status(400).json(err);
     });
 });
+
+router.post()
+
+router.delete()

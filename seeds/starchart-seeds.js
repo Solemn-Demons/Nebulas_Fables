@@ -1,6 +1,8 @@
 const { Starchart } = require('../models');
 
-const starchartData = [];
+const starchartData = [
+    
+];
 
 
 const seedStarchart = () => Starchart.bulkCreate(starchartDataData);
