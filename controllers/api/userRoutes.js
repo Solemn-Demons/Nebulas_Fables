@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { User } = require("../../models");
 
 //create new user for login
-router.post("/create", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const newUser = await User.create(req, res);
     //save the session data
