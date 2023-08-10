@@ -1,0 +1,26 @@
+{
+  "name": "nebulas_fables",
+  "version": "1.0.0",
+  "description": "Interactive Front End Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Solemn-Demons/Nebulas_Fables.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Solemn-Demons/Nebulas_Fables/issues"
+  },
+  "homepage": "https://github.com/Solemn-Demons/Nebulas_Fables#readme",
+  "dependencies": {
+    "install": "^0.13.0",
+    "three": "^0.155.0"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9"
+  }
+}
