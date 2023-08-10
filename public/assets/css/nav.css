@@ -3,7 +3,7 @@ Background image
 */
 
 .background {
-  background-image: url(/Nebulas_Fables/assets/images/NF.jpeg);
+  background-image: url(../images/NF.jpeg);
   background-repeat: repeat;
   background-size: cover;
   height: 150vh;
