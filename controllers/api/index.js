@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const userRoutes = require("./userRoutes");
 const mythosRoutes = require("./mythos-routes");
-const starchartRoutes = require("./starchart-routes");
+const starchartRoutes = require("./star-routes");
 
 router.use("/users", userRoutes);
 router.use("/mythos", mythosRoutes);

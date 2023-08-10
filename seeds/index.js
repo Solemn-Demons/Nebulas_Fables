@@ -1,5 +1,5 @@
 const seedMythos = require('./mythos-seeds');
-const seedStarchart = require('./starchart-seeds');
+const seedStar = require('./star-seeds');
 const seedUser = require('./user-seeds');
 
 const sequelize = require('../config/connection');
@@ -11,7 +11,7 @@ const seedAll = async () => {
     await seedMythos();
     console.log('\n----- MYTHOS SEEDED -----\n');
   
-    await seedStarchart();
+    await seedStar();
     console.log('\n----- STARCHART SEEDED -----\n');
   
     await seedUser();
