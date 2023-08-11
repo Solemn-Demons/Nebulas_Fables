@@ -14,7 +14,7 @@ Star.init(
             autoIncrement: true,
             allowNull: false
         },
-        category_name: {
+        constellation_name: {
             type: DataTypes.TEXT,
             allowNull: false
         }

@@ -23,8 +23,8 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post()
+//router.post()
 
-router.delete()
+//router.delete()
 
 module.exports = router;
