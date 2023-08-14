@@ -1,7 +1,9 @@
 const { Constellation } = require('../models');
 
 const constellationData = [
-    
+    {
+      constellation_name: "Orion"  
+    },
 ];
 
 
