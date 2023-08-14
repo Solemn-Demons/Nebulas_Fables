@@ -14,17 +14,27 @@ Star.init(
             autoIncrement: true,
             allowNull: false
         },
-        constellation_name: {
+        starname_name: {
             type: DataTypes.TEXT,
-            allowNull: false
-        }
+            allowNull: false,
+
+        },
+        //reference constellation id
+        constellation_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'constellation',
+                key: 'id',
+            },
+        },
+
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'starchart',
+        modelName: 'star',
       }
 );
 
