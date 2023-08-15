@@ -23,6 +23,9 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Press+Start+2P:regular"
     />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+<!-- Font Awesome CSS -->
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
   </head>
 
   <body class="background">
@@ -30,9 +33,40 @@
       <h1>Nebulas Fables</h1>
     </header>
     <div class="auth-links">
-      <a href="#" class="auth-link">Login</a>
-      <a href="#" class="auth-link">Sign-up</a>
+      <a href="#" class="auth-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+      <a href="#" class="auth-link" data-bs-toggle="modal" data-bs-target="#signupModal">Sign-up</a>
     </div>
+<!-- bootstrap modal for login -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Use Handlebars syntax to render the login template -->
+        {{> login-template}}
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- bootstrap modal for signup -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Use Handlebars syntax to render the signup template -->
+        {{> signup-template}}
+      </div>
+    </div>
+  </div>
+</div>
+
     <section class="NavContainer">
 <!--   SEARCH BAR - DISABLED ON HOME/INDEX
       <section id="user-search">

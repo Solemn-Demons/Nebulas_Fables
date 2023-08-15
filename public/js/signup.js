@@ -23,4 +23,11 @@ const signupFormHandler = async (event) => {
 };
 
 //event listener for signup button
-document.querySelector("submit").addEventListener("click", signupFormHandler);
+document.querySelector(".auth-link[data-bs-target='#signupModal']").addEventListener("click", () => {
+  const template = document.getElementById("signup-template").innerHTML;
+  const compiledTemplate = Handlebars.compile(template);
+  const modalBody = document.querySelector("#signupModal .modal-body");
+  modalBody.innerHTML = compiledTemplate();
+});
+
+document.querySelector("#signup").addEventListener("click", signupFormHandler);
