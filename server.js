@@ -8,29 +8,30 @@ const routes = require("./controllers");
 const sequelize = require("./config/connection");
 //const helpers = require("./utils/helpers");
 const exp = require("constants");
+const router = require("./controllers");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 //const hbs = exphbs.create({ helpers });
 
-// const sesh = {
-//   //need to create cookie params
-//   secret: process.env.SECRET
-//   cookie: {
-//     maxage: 600000,
-//     httpOnly: true,
-//     secure: false,
-//     sameSite: "strict",
-//   },
-//   reseave: false,
-//   saveUninitialized: true,
-//   store: new SequelizeStore({
-//     db: sequelize,
-//   }),
-// };
+const sesh = {
+  //need to create cookie params
+  secret: process.env.SECRET,
+  cookie: {
+    maxage: 600000,
+    httpOnly: true,
+    secure: false,
+    sameSite: "strict",
+  },
+  reseave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
+};
 
-//app.use(sesh);
+app.use(sesh, router);
 
 //app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
