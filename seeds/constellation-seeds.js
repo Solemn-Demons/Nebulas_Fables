@@ -4,6 +4,9 @@ const constellationData = [
     {
       constellation_name: "Orion"  
     },
+    {
+        constellation_name: 'Scorpio'
+    },
 ];
 
 
