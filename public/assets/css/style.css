@@ -3,6 +3,25 @@
    color: aqua;
 }
 
+.auth-links {
+   display: flex;
+   justify-content: flex-end;
+   margin-bottom: 10px;
+   padding-right: 20px;
+ }
+ 
+ .auth-link {
+   color: cyan;
+   text-decoration: none;
+   margin-left: 20px;
+ }
+ 
+ @media (min-width: 768px) {
+   .nav-buttons {
+     justify-content: space-between;
+   }
+ }
+
 .smile {
    display: flex;
    flex-wrap: wrap;
