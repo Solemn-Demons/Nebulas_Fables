@@ -8,7 +8,7 @@ router.post("/", async (req, res) => {
     //save the session data
     req.sessionsave(() => {
       req.session.user_id = userData.id;
-      req.sessions.logged_in = true;
+      req.sessions.loggedIn = true;
 
       res.status(200).json(userData);
     });
@@ -40,7 +40,7 @@ router.post("/login", async (req, res) => {
 
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.sessions.logged_in = true;
+      req.sessions.loggedIn = true;
 
       res.json({
         user: userData,
@@ -49,6 +49,17 @@ router.post("/login", async (req, res) => {
     });
   } catch (err) {
     res.status(404).end();
+  }
+});
+
+//logout
+router.post("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status.apply(404).end();
   }
 });
 
