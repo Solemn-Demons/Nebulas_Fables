@@ -13,7 +13,7 @@ const router = require("./controllers");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-//const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({});
 
 const sesh = {
   //need to create cookie params
@@ -33,11 +33,11 @@ const sesh = {
 
 app.use(sesh, router);
 
-//app.engine("handlebars", hbs.engine);
+app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 //set directory for views
-app.set('views', path.join(__dirname, 'views'));
+app.set("views", path.join(__dirname, "views"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
