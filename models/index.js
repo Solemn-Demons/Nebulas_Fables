@@ -11,10 +11,12 @@ const Facts = require('./Facts');
 
 Constellation.hasMany(Star, {
     foreignKey: 'constellation_id',
+    constraints: false,
 });
 
 Star.belongsTo(Constellation, {
-    foreignKey: 'constellation_id',
+    // foreignKey: 'constellation_id',
+    // constraints: false,
 });
 
 Constellation.hasMany(Facts, {
