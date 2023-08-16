@@ -10,13 +10,14 @@ Star.init(
     {
         id: {
             type: DataTypes.INTEGER,
-            primaryKey: true,
+           primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
-        starname_name: {
+        star_name: {
             type: DataTypes.TEXT,
-            allowNull: false,
+            allowNull: true,
+            defaultValue: null,
 
         },
         //reference constellation id

@@ -2,6 +2,7 @@ const { Star } = require('../models');
 
 const starData = [
     {
+        id: 1,
         star_name: "Rigel",
         constellation_id: 1,
     },
@@ -105,6 +106,6 @@ const starData = [
 ];
 
 
-const seedStar = () => Starchart.bulkCreate(starData);
+const seedStar = () => Star.bulkCreate(starData);
 
 module.exports = seedStar;
