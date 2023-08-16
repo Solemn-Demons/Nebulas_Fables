@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
 
 //get login from homepage
 router.get("/login", (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.redirect("/");
     return;
   }
@@ -19,7 +19,7 @@ router.get("/login", (req, res) => {
 
 //get signup from homepage
 router.get("/signup", (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.direct("/");
     return;
   }
