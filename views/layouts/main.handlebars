@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <header>
+        <nav>
+               <ul>
+              {{#if logged_in}}
+            <li>Log Out</li>
+            {{#else}}
+            <li>Login</li>
+            <li>Sign Up</li>
+            {{/if}}
+        </ul>
+        </nav>
+    </header>
+<body>
+      {{#if logged_in}}
+      <!-- if logged in script for logout js -->
+      <script src="/public/js/logout.js"></script>
+      {{/if}}
+
+ </body>
+</html>
