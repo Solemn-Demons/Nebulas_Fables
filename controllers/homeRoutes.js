@@ -3,6 +3,10 @@ const router = require("express").Router();
 const { User } = require("../models");
 const sequelize = require("../config/connection");
 
+router.get("/", async (req, res) => {
+  res.render("homepage");
+});
+
 //get login from homepage
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {

@@ -23,11 +23,13 @@ const loginFormHandler = async (event) => {
 };
 
 //whatever we name our login form and button will go here and run the form handler functions
-document.querySelector(".auth-link[data-bs-target='#loginModal']").addEventListener("click", () => {
-  const template = document.getElementById("login-template").innerHTML;
-  const compiledTemplate = Handlebars.compile(template);
-  const modalBody = document.querySelector("#loginModal .modal-body");
-  modalBody.innerHTML = compiledTemplate();
-});
+document
+  .querySelector(".auth-link[data-bs-target='#loginModal']")
+  .addEventListener("click", () => {
+    const template = document.getElementById("login-template").innerHTML;
+    const compiledTemplate = Handlebars.compile(template);
+    const modalBody = document.querySelector("#loginModal .modal-body");
+    modalBody.innerHTML = compiledTemplate();
+  });
 
 document.querySelector("#login").addEventListener("click", loginFormHandler);
