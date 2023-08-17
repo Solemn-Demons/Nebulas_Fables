@@ -3,11 +3,11 @@ const loginFormHandler = async (event) => {
   event.preventDefault();
 
   //collecting username and password from login screen
-  const username = document.querySelector("#username-login").value.trim();
+  const username = document.querySelector("#email-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
 
   if (username && password) {
-    const response = await fetch("/api/users/login", {
+    const response = await fetch("/api/login", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
@@ -32,4 +32,4 @@ const loginFormHandler = async (event) => {
 //     modalBody.innerHTML = compiledTemplate();
 //   });
 
-document.querySelector(".login-form").on("submit", loginFormHandler);
+document.querySelector(".login-form").addEventListener("submit", loginFormHandler);
