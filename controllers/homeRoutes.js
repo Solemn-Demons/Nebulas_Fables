@@ -63,4 +63,7 @@ router.get("/about", (req, res) => {
   res.render("about");
 });
 
+router.get("/directory", (req, res) => {
+  res.render("directory");
+});
 module.exports = router;
