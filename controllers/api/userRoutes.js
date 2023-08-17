@@ -35,7 +35,7 @@ router.post("/login", async (req, res) => {
       });
       return;
     }
-
+    console.log('this is wrong');
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -44,7 +44,7 @@ router.post("/login", async (req, res) => {
       });
       return;
     }
-
+    console.log('this is also wrong');
     req.session.save(() => {
       req.session.userId = userData.id;
       req.session.username = userData.username;

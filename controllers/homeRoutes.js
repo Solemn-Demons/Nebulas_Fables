@@ -44,7 +44,7 @@ router.get("/login", (req, res) => {
 //get signup from homepage
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
-    res.direct("/");
+    res.redirect("/");
     return;
   }
   //render handlebars signup
