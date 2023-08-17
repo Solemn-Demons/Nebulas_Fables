@@ -111,9 +111,14 @@
       >
       <a
         href="signup"
-        ><button type="button" id="signup">Sign-up</button></a
-      >
+        ><button type="button" id="signup">Sign-up</button></a>
+        {{#if loggedIn}}
+         <a
+        href="logout"
+        ><button class="btn btn-primary" type="click" id="logout">Logout</button></a>
         </div>
+        <script src="./assets/js/logout.js"></script>
+        {{/if}}
       </nav>
     </section>
 
@@ -201,7 +206,7 @@
       integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
       crossorigin="anonymous"
     ></script>
-
+  
     
   
   </body>

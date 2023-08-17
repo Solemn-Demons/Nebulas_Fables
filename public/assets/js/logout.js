@@ -14,4 +14,5 @@ const logout = async () => {
 };
 
 //once we make a logout button this will be the event listener to start the logout function
-document.querySelector(".logout").addEventListener("submit", logout);
+document.querySelector("logout")
+.addEventListener("click", logout);
