@@ -14,7 +14,8 @@
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
     crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/css/nav.css"/>
-    <link rel="stylesheet" href="../assets/css/Directory/directory.css" />
+
+    <link rel="stylesheet" href="../assets/css/Mythos/mythos.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P:regular"/>
   </head>
 
@@ -24,41 +25,30 @@
     </header>
 
     <section class="NavContainer">
-<!--  SEARCH BAR - DISABLED ON DIRECTORY
+<!--  SEARCH BAR - DISABLED ON MYTHOS page
       <section id="user-search">
         <input id="user-input" type="text" placeholder="Search the Galaxy" />
         <button id="searchBtn">Search</button>
-      </section> 
-      <div id="img-card"></div>-->
+      </section>
+      <div id="img-card"></div> -->
 
       <nav class="nav"> 
-        <a href="./homepage"><button type="button" id="Home">Home</button></a>
-        <!--Directory Button trigger modal-->
-        <button type="button" class="main" id="Directory" data-bs-toggle="modal" data-bs-target="#directoryModel">Directory</button>
-        <a href="./NASA"><button type="button" id="NASA">NASA</button></a>
-        <a href="./mythos"><button type="button" id="Mythos"> Mythos</button></a>
-        <a href="./about"><button type="button" id="About">About</button></a>
+          <a href="/"><button type="button" class="main" id="Home">Home</button></a>
+          <a href="directory"><button type="button" id="directory">Directory</button></a>
+          <a href="NASA"><button type="button" id="NASA">NASA</button></a>
+          <a href="mythos"><button type="button" id="Mythos">Mythos</button></a>
+          <a href="about"><button type="button" id="About">About</button></a>
       </nav>
-
     </section>
 
-       <!--Directory Modal-->
-       <div class="modal fade" id="directoryModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Directory</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              Coming soon!
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      
+  <!-- Placeholder DIV for MYTHOS SPHERE location -->
+      <div>
+        <main style="text-align: center; font-weight: bold; color: cyan; padding: 1in;">
+    drop down will go here for constellations
+        </main>
+     </div>
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
@@ -78,5 +68,6 @@
     crossorigin="anonymous"></script>
     <script src="../public/assets/js/wiki-api.js"></script>
     <script src="../public/assets/js/nasa.js"></script>
+
   </body>
 </html>

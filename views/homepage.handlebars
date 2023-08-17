@@ -115,26 +115,11 @@
         <div id="img-card">-->
       <nav class="nav">
         <div class="nav-buttons">
-          <a href="../../index.html"
-            ><button type="button" class="main" id="Home">Home</button></a
-          >
-          <button
-            type="button"
-            id="Directory"
-            data-bs-toggle="modal"
-            data-bs-target="#directoryModal"
-          >
-            Directory
-          </button>
-          <a href="NASA"
-            ><button type="button" id="NASA">NASA</button></a
-          >
-          <a href="mythos"
-            ><button type="button" id="Mythos">Mythos</button></a
-          >
-          <a href="about"
-            ><button type="button" id="About">About</button></a
-          >
+          <a href="/"><button type="button" class="main" id="Home">Home</button></a>
+          <a href="directory"><button type="button" id="directory">Directory</button></a>
+          <a href="NASA"><button type="button" id="NASA">NASA</button></a>
+          <a href="mythos"><button type="button" id="Mythos">Mythos</button></a>
+          <a href="about"><button type="button" id="About">About</button></a>
         </div>
       </nav>
     </section>
@@ -202,72 +187,6 @@
         </ul>
       </div>
     </section>
-
-    <!--Directory Modal-->
-    <div
-      class="modal fade"
-      id="directoryModal"
-      tabindex="-1"
-      aria-labelledby="directoryModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="directoryModalLabel">Directory</h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">Coming soon!</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- mythos Modal -->
-    <div
-      class="modal fade"
-      id="mythosModal"
-      tabindex="-1"
-      aria-labelledby="mythosModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="mythosModalLabel">Mythos</h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">Coming soon!</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
