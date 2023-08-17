@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({});
 
-const sesh = {
+const sess = {
   //need to create cookie params
   secret: process.env.SECRET,
   cookie: {
@@ -31,7 +31,7 @@ const sesh = {
   }),
 };
 
-app.use(session(sesh));
+app.use(session(sess));
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
