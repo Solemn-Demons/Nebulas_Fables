@@ -1,10 +1,35 @@
 // to redirect to home page
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Constellation, Star, Facts,  } = require("../models");
 const sequelize = require("../config/connection");
 
 router.get("/", async (req, res) => {
   res.render("homepage");
+});
+
+
+router.get('/', async (req, res) => {
+  try {
+    const constellationData = await Constellation.findAll({
+      include: [
+        {
+          model: Star,
+          model: Facts,
+        },
+      ],
+    });
+
+    const dbConstellation = constellationData.map((constellation) =>
+      constellation.get({ plain: true })
+    );
+    res.render('homepage', {
+      dbConstellation,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 //get login from homepage
