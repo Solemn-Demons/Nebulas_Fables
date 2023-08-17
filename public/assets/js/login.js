@@ -1,13 +1,12 @@
-
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
   //collecting username and password from login screen
-  const username = document.querySelector("#email-login").value.trim();
+  const username = document.querySelector("#user-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
 
   if (username && password) {
-    const response = await fetch("/api/users", {
+    const response = await fetch("/api/users/login", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
@@ -15,7 +14,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       //if successfully logged in redirect to whatever page we want
-      document.location.replace("/");
+      document.location.replace("/homepage");
     } else {
       alert(response.statusText);
     }
@@ -32,4 +31,6 @@ const loginFormHandler = async (event) => {
 //     modalBody.innerHTML = compiledTemplate();
 //   });
 
-document.querySelector(".login-form").addEventListener("submit", loginFormHandler);
+document
+  .querySelector(".login-form")
+  .addEventListener("submit", loginFormHandler);
