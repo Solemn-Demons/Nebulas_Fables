@@ -1,0 +1,26 @@
+<section class="container">
+  <h3 class="constellation-name">{{constellation.constellation-name}}</h3>
+
+  <!-- If the user is logged in, render the gallery content -->
+  {{#if loggedIn}}
+  <section class="flex-row justify-center">
+   <p>Stars: 
+   <ul>
+    <li>{{#each constellation.Stars.star_name}}
+        {{/each}}
+        </li>
+        </ul>
+    </p>
+  <p>Facts: 
+    <ul>
+        <li>{{#each conatellation.facts}}
+            {{/each}}
+        </li>
+        </ul>
+        </p>
+  </section>
+</section>
+<!-- Otherwise, provide a link to login -->
+{{else}}
+<a href="/login">You must login first to view this page</a>
+{{/if}}

@@ -7,13 +7,37 @@ const { Constellation, Star, Facts } = require('../../models');
 //     .catch((err) => res.status(500).json(err));
 // });
 
-router.get('/', async (req, res) => {
+// router.get('/', async (req, res) => {
+//     try {
+//       const constellationData = await Constellation.findAll({
+//         include: [{ model: Star }, { model: Facts }],
+//       });
+//       res.status(200).json(constellationData);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
+
+  router.get('/', async (req, res) => {
     try {
       const constellationData = await Constellation.findAll({
-        include: [{ model: Star }, { model: Facts }],
+        include: [
+          {
+            model: Star,
+            model: Facts,
+          },
+        ],
       });
-      res.status(200).json(constellationData);
+  
+      const dbConstellation = constellationData.map((constellation) =>
+        constellation.get({ plain: true })
+      );
+      res.render('homepage', {
+        dbConstellation,
+        //loggedIn: req.session.loggedIn,
+      });
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
   });
