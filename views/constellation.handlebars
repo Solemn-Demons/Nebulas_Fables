@@ -1,26 +1,40 @@
 <section class="container">
-  <h3 class="constellation-name">{{constellation.constellation-name}}</h3>
-
-  <!-- If the user is logged in, render the gallery content -->
+  <!-- If the user is logged in, show dropdown menu and constellation details -->
   {{#if loggedIn}}
-  <section class="flex-row justify-center">
-   <p>Stars: 
-   <ul>
-    <li>{{#each constellation.Stars.star_name}}
-        {{/each}}
-        </li>
+    <section>
+      <!-- Constellation dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Select a constellation...
+        </button>
+        <ul class="dropdown-menu" style="">
+          <li><a class="dropdown-item" id="1" href="#">Orion</a></li>
+          <li><a class="dropdown-item" id="2" href="#">Scorpio</a></li>
         </ul>
-    </p>
-  <p>Facts: 
-    <ul>
-        <li>{{#each constellation.facts}}
-            {{/each}}
-        </li>
+      </div>
+    </section>
+
+    <!-- Constellation details -->
+    <h3 class="constellation-name">{{selectedConstellation.name}}</h3>
+    <section class="flex-row justify-center">
+      <p>Stars:
+        <ul class="stars-list">
+          {{#each selectedConstellation.stars}}
+            <li>{{this}}</li>
+          {{/each}}
         </ul>
-        </p>
-  </section>
+      </p>
+      <p>Facts:
+        <ul class="facts-list">
+          {{#each selectedConstellation.facts}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </p>
+    </section>
+    <script src="path/to/constellation.js"></script>
+  {{else}}
+    <!-- Provide a link to login if not logged in -->
+    <a href="/login">You must login first to view this page</a>
+  {{/if}}
 </section>
-<!-- Otherwise, provide a link to login -->
-{{else}}
-<a href="/login">You must login first to view this page</a>
-{{/if}}
