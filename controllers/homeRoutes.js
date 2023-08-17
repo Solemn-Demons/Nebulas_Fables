@@ -51,6 +51,10 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
+router.get("/homepage", (req, res) => {
+  res.render("homepage");
+});
+
 router.get("/NASA", (req, res) => {
   res.render("NASA");
 });
