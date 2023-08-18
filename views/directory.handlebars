@@ -54,18 +54,19 @@
   {{#if loggedIn}}
     <section>
       <!-- Constellation dropdown -->
+      
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Select a constellation...
-        </button>
-        <ul class="dropdown-menu" style="">
-          <li><a class="dropdown-item" id="1" href="#">Orion</a></li>
-          <li><a class="dropdown-item" id="2" href="#">Scorpio</a></li>
-        </ul>
+      <label for="dropdown">Select a constellation:</label> 
+          <select name="constellationOption" id="constellationOption"> 
+            {{!-- for each loop for all constellations --}}
+              <option value="Orion">Orion</option> 
+              <option value="Scorpio">Scorpio</option> 
+          </select>
       </div>
     </section>
 
     <!-- Constellation details -->
+    {{!-- empty shell, use js to generate each --}}
     <h3 class="constellation-name">{{selectedConstellation.name}}</h3>
     <section class="flex-row justify-center">
       <p>Stars:
