@@ -41,6 +41,16 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+router.get("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.redirect("/login");
+    });
+  } else {
+    res.redirect("/homepage");
+  }
+});
+
 //get signup from homepage
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
@@ -68,7 +78,7 @@ router.get("/about", (req, res) => {
 });
 
 router.get("/directory", async (req, res) => {
-  console.log('directory route')
+  console.log("directory route");
   try {
     const constellationData = await Constellation.findAll({
       include: [
@@ -82,7 +92,7 @@ router.get("/directory", async (req, res) => {
     const dbConstellation = constellationData.map((constellation) =>
       constellation.get({ plain: true })
     );
-    res.render('directory', {
+    res.render("directory", {
       dbConstellation,
       loggedIn: req.session.loggedIn,
     });

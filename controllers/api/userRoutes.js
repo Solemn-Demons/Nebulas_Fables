@@ -35,7 +35,7 @@ router.post("/login", async (req, res) => {
       });
       return;
     }
-    console.log('this is wrong');
+    console.log("this is wrong");
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -44,7 +44,7 @@ router.post("/login", async (req, res) => {
       });
       return;
     }
-    console.log('this is also wrong');
+    console.log("this is also wrong");
     req.session.save(() => {
       req.session.userId = userData.id;
       req.session.username = userData.username;
@@ -67,23 +67,15 @@ router.post("/logout", (req, res) => {
       res.status(204).end();
     });
   } else {
-    res.status.apply(404).end();
+    res.status(404).end();
   }
   // Pass the loggedIn variable to pages to render Sign-up, sign-ou, or login dynamically
-req.session.save(() => {
-  req.session.user_id = userData.id;
-  req.session.loggedIn = true;
+  // req.session.save(() => {
+  //   req.session.user_id = userData.id;
+  //   req.session.loggedIn = true;
 
-  res.render('homepage', { loggedIn: true }); 
+  //   res.render('homepage', { loggedIn: true });
+  // });
 });
-});
-
-// Pass the loggedIn variable to pages to render Sign-up, sign-ou, or login dynamically
-// req.session.save(() => {
-//   req.session.user_id = userData.id;
-//   req.session.loggedIn = true;
-
-//   res.render('homepage', { loggedIn: true }); 
-// });
 
 module.exports = router;
