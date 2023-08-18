@@ -37,7 +37,17 @@
     <header class="header">
       <h1>Nebulas Fables</h1>
     </header>
-  
+      {{#if loggedIn}}
+        <div class="auth-links">
+          <a href="/logout" class="auth-link">Sign Out</a>
+        </div>
+      {{else}}
+        <div class="auth-links">
+          <a href="#login" class="auth-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+          <a href="#" class="auth-link" data-bs-toggle="modal" data-bs-target="#signupModal">Sign-up</a>
+        </div>
+      {{/if}}
+
     <!-- bootstrap modal for login -->
 {{!--   
     <div
