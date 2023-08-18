@@ -37,77 +37,11 @@
     <header class="header">
       <h1>Nebulas Fables</h1>
     </header>
-      {{#if loggedIn}}
-        <div class="auth-links">
-          <a href="/logout" class="auth-link">Sign Out</a>
-        </div>
-      {{else}}
-        <div class="auth-links">
-          <a href="#login" class="auth-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
-          <a href="#" class="auth-link" data-bs-toggle="modal" data-bs-target="#signupModal">Sign-up</a>
-        </div>
-      {{/if}}
-
-    <!-- bootstrap modal for login -->
-{{!--   
-    <div
-      class="modal fade"
-      id="loginModal"
-      tabindex="-1"
-      aria-labelledby="loginModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">Login</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <!-- Use Handlebars syntax to render the login template -->
-            {{> login-template}}
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- bootstrap modal for signup -->
-    <div
-      class="modal fade"
-      id="signupModal"
-      tabindex="-1"
-      aria-labelledby="signupModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <!-- Use Handlebars syntax to render the signup template -->
-            {{> signup-template}}
-          </div>
-        </div>
-      </div>
-    </div> --}}
+     
+    
 
     <section class="NavContainer">
-      <!--   SEARCH BAR - DISABLED ON HOME/INDEX
-      <section id="user-search">
-        <input id="user-input" type="text" placeholder="Search the Galaxy" />
-        <button id="searchBtn">Search</button> 
-        <div id="img-card">-->
+     
       <nav class="nav">
         <div class="nav-buttons">
           <a href="/"><button type="button" class="main" id="Home">Home</button></a>
@@ -122,13 +56,10 @@
       <a
         href="signup"
         ><button type="button" id="signup">Sign-up</button></a>
-        {{#if loggedIn}}
          <a
         href="logout"
-        ><button class="btn btn-primary" type="click" id="logout">Logout</button></a>
+        ><button type="button" id="logout">Logout</button></a>
         </div>
-        <script src="./assets/js/logout.js"></script>
-        {{/if}}
       </nav>
     </section>
 
