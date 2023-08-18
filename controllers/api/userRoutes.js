@@ -4,10 +4,15 @@ const { User } = require("../../models");
 //create new user for login
 router.post("/", async (req, res) => {
   try {
-    const newUser = await User.create(req, res);
+    const newUser = await User.create({
+      username: req.body.username,
+      password: req.body.password,
+      email: req.body.email,
+    });
     //save the session data
     req.sessionsave(() => {
-      req.session.user_id = userData.id;
+      req.session.userId = userData.id;
+      req.session.username = userData.username;
       req.session.loggedIn = true;
 
       res.status(200).json(userData);
@@ -17,29 +22,32 @@ router.post("/", async (req, res) => {
   }
 });
 
-//login finding  user email
+//login finding  username
 router.post("/login", async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const userData = await User.findOne({
+      where: { username: req.body.username },
+    });
 
     if (!userData) {
-      res
-        .statusMessage(400)
-        .json({ message: "Email or Password is incorrect. Please try again." });
+      res.statusMessage(400).json({
+        message: "Username or Password is incorrect. Please try again.",
+      });
       return;
     }
-
+    console.log('this is wrong');
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: "Email or Password is incorrect. Please try again." });
+      res.status(400).json({
+        message: "Username or Password is incorrect. Please try again.",
+      });
       return;
     }
-
+    console.log('this is also wrong');
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.userId = userData.id;
+      req.session.username = userData.username;
       req.session.loggedIn = true;
 
       res.json({

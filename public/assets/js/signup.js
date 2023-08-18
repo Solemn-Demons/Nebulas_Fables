@@ -1,5 +1,5 @@
 //sign up handler if creating new user
-const signupFormHandler = async (event) => {
+async function signupFormHandler(event) {
   event.preventDefault();
 
   const username = document.querySelector("#user-signup").value.trim();
@@ -14,20 +14,14 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      //after they create account redirect wherever we want
-      document.location.replace("/");
+      //after they create account redirect to homepage after login
+      document.location.replace("/homepage");
     } else {
       alert(response.statusText);
     }
   }
-};
+}
 
-//event listener for signup button
-document.querySelector(".auth-link[data-bs-target='#signupModal']").addEventListener("click", () => {
-  const template = document.getElementById("signup-template").innerHTML;
-  const compiledTemplate = Handlebars.compile(template);
-  const modalBody = document.querySelector("#signupModal .modal-body");
-  modalBody.innerHTML = compiledTemplate();
-});
-
-document.querySelector("#signup").addEventListener("click", signupFormHandler);
+document
+  .querySelector(".signup-form")
+  .addEventListener("submit", signupFormHandler);

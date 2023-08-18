@@ -32,7 +32,7 @@ const { Constellation, Star, Facts } = require('../../models');
       const dbConstellation = constellationData.map((constellation) =>
         constellation.get({ plain: true })
       );
-      res.render('homepage', {
+      res.render('directory', {
         dbConstellation,
         //loggedIn: req.session.loggedIn,
       });

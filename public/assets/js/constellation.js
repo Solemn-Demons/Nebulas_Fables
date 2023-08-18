@@ -1,34 +1,34 @@
-constellationSearch();
+// constellationSearch();
 
-var divEl = document.getElementById('starchartSearch');
+// var divEl = document.getElementById('starchartSearch');
 
-function constellationSearch(userSearch)  {
-    $('#searchBtn').on('click', function async (event) {
-        var searchInput = $('#user-search').val().trim();
+// function constellationSearch(userSearch)  {
+//     $('#searchBtn').on('click', function async (event) {
+//         var searchInput = $('#user-search').val().trim();
         
-        if (loggedIn) {
-            const response = await fetch('/api/constellation', {
-                method: 'GET',
-                body: JSON.stringify(constellationData),
-                headers: {'Content-type': 'application/json'},
-            })
-            .then(function (data)
-            {
-                console.log(data);
-                var constellationResponse = data;
-                $('#starchartSearch').empty();
-                console.log(constellationResponse);
+//         if (loggedIn) {
+//             const response = await fetch('/api/constellation', {
+//                 method: 'GET',
+//                 body: JSON.stringify(constellationData),
+//                 headers: {'Content-type': 'application/json'},
+//             })
+//             .then(function (data)
+//             {
+//                 console.log(data);
+//                 var constellationResponse = data;
+//                 $('#starchartSearch').empty();
+//                 console.log(constellationResponse);
                 
-            })
-        } else {
-            alert('Please Login');
-        };
-    });
-};
+//             })
+//         } else {
+//             alert('Please Login');
+//         };
+//     });
+// };
 
 // BETHS CODE TO REVIEW AND BLEND WITH ABOVE WHEN NOT SO TIRED
 // Fetch constellation details based on ID
-/* async function fetchConstellationDetails(constellationId) {
+ async function fetchConstellationDetails(constellationId) {
     const response = await fetch(`/api/constellation/${constellationId}`);
     const data = await response.json();
     return data;
@@ -64,4 +64,4 @@ function constellationSearch(userSearch)  {
       updateConstellationDetails(selectedConstellation);
     });
   });
-   */
+   
