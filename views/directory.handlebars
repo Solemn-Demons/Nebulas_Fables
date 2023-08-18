@@ -49,6 +49,47 @@
 
   <!-- constellation.handlebars placeholder-->
 
+<section class="container">
+  <!-- If the user is logged in, show dropdown menu and constellation details -->
+  {{#if loggedIn}}
+    <section>
+      <!-- Constellation dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Select a constellation...
+        </button>
+        <ul class="dropdown-menu" style="">
+          <li><a class="dropdown-item" id="1" href="#">Orion</a></li>
+          <li><a class="dropdown-item" id="2" href="#">Scorpio</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Constellation details -->
+    <h3 class="constellation-name">{{selectedConstellation.name}}</h3>
+    <section class="flex-row justify-center">
+      <p>Stars:
+        <ul class="stars-list">
+          {{#each selectedConstellation.stars}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </p>
+      <p>Facts:
+        <ul class="facts-list">
+          {{#each selectedConstellation.facts}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </p>
+    </section>
+    
+  {{else}}
+    <!-- Provide a link to login if not logged in -->
+    <a href="/login">You must login first to view this page</a>
+  {{/if}}
+</section>
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
@@ -66,7 +107,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" 
     integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" 
     crossorigin="anonymous"></script>
-   
+   <script src="./assets/js/constellation.js"></script>
 
 
   </body>
