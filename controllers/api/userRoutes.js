@@ -69,14 +69,21 @@ router.post("/logout", (req, res) => {
   } else {
     res.status.apply(404).end();
   }
-});
-
-// Pass the loggedIn variable to pages to render Sign-up, sign-ou, or login dynamically
+  // Pass the loggedIn variable to pages to render Sign-up, sign-ou, or login dynamically
 req.session.save(() => {
   req.session.user_id = userData.id;
   req.session.loggedIn = true;
 
   res.render('homepage', { loggedIn: true }); 
 });
+});
+
+// Pass the loggedIn variable to pages to render Sign-up, sign-ou, or login dynamically
+// req.session.save(() => {
+//   req.session.user_id = userData.id;
+//   req.session.loggedIn = true;
+
+//   res.render('homepage', { loggedIn: true }); 
+// });
 
 module.exports = router;
