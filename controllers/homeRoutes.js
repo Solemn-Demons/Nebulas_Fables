@@ -67,7 +67,28 @@ router.get("/about", (req, res) => {
   res.render("about");
 });
 
-router.get("/directory", (req, res) => {
-  res.render("directory");
+router.get("/directory", async (req, res) => {
+  console.log('directory route')
+  try {
+    const constellationData = await Constellation.findAll({
+      include: [
+        {
+          model: Star,
+          model: Facts,
+        },
+      ],
+    });
+
+    const dbConstellation = constellationData.map((constellation) =>
+      constellation.get({ plain: true })
+    );
+    res.render('directory', {
+      dbConstellation,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 module.exports = router;

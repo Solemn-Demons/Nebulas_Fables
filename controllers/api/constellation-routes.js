@@ -18,29 +18,7 @@ const { Constellation, Star, Facts } = require('../../models');
 //     }
 //   });
 
-  router.get('/', async (req, res) => {
-    try {
-      const constellationData = await Constellation.findAll({
-        include: [
-          {
-            model: Star,
-            model: Facts,
-          },
-        ],
-      });
-  
-      const dbConstellation = constellationData.map((constellation) =>
-        constellation.get({ plain: true })
-      );
-      res.render('directory', {
-        dbConstellation,
-        //loggedIn: req.session.loggedIn,
-      });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  });
+
 
 // router.get('/:id', (req, res) => {
 //     Constellation.findOne({
@@ -58,7 +36,7 @@ const { Constellation, Star, Facts } = require('../../models');
 //     });
 // });
 
-router.get('/:id', async (req, res) => {
+router.get('/:constellation_name', async (req, res) => {
     try {
       const constellationData = await Constellation.findByPk(req.params.id, {
         include: [{ model: Facts }, { model: Star }],
