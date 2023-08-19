@@ -17,7 +17,9 @@ async function signupFormHandler(event) {
       //after they create account redirect to homepage after login
       document.location.replace("/homepage");
     } else {
-      alert(response.statusText);
+      alert(
+        "An account with this Username or Email already exists. Please try again."
+      );
     }
   }
 }
