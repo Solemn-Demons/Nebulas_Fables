@@ -4,10 +4,10 @@ const { User } = require("../../models");
 //create new user for login
 router.post("/", async (req, res) => {
   try {
-    const newUser = await User.create({
+    const userData = await User.create({
       username: req.body.username,
-      password: req.body.password,
       email: req.body.email,
+      password: req.body.password,
     });
     //save the session data
     req.sessionsave(() => {
@@ -35,7 +35,6 @@ router.post("/login", async (req, res) => {
       });
       return;
     }
-    console.log("this is wrong");
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -44,7 +43,6 @@ router.post("/login", async (req, res) => {
       });
       return;
     }
-    console.log("this is also wrong");
     req.session.save(() => {
       req.session.userId = userData.id;
       req.session.username = userData.username;
@@ -69,13 +67,6 @@ router.post("/logout", (req, res) => {
   } else {
     res.status(404).end();
   }
-  // Pass the loggedIn variable to pages to render Sign-up, sign-ou, or login dynamically
-  // req.session.save(() => {
-  //   req.session.user_id = userData.id;
-  //   req.session.loggedIn = true;
-
-  //   res.render('homepage', { loggedIn: true });
-  // });
 });
 
 module.exports = router;

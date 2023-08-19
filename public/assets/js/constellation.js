@@ -5,7 +5,7 @@
 // function constellationSearch(userSearch)  {
 //     $('#searchBtn').on('click', function async (event) {
 //         var searchInput = $('#user-search').val().trim();
-        
+
 //         if (loggedIn) {
 //             const response = await fetch('/api/constellation', {
 //                 method: 'GET',
@@ -18,7 +18,7 @@
 //                 var constellationResponse = data;
 //                 $('#starchartSearch').empty();
 //                 console.log(constellationResponse);
-                
+
 //             })
 //         } else {
 //             alert('Please Login');
@@ -35,29 +35,29 @@ async function fetchConstellationDetails(constellationId) {
 }
 
 function updateConstellationDetails(constellation) {
-  const constellationName = document.querySelector('.constellation-name');
+  const constellationName = document.querySelector(".constellation-name");
   constellationName.textContent = constellation.name;
 
-  const starsList = document.querySelector('.stars-list');
-  starsList.innerHTML = '';
-  constellation.stars.forEach(star => {
-    const starItem = document.createElement('li');
+  const starsList = document.querySelector(".stars-list");
+  starsList.innerHTML = "";
+  constellation.stars.forEach((star) => {
+    const starItem = document.createElement("li");
     starItem.textContent = star;
     starsList.appendChild(starItem);
   });
 
-  const factsList = document.querySelector('.facts-list');
-  factsList.innerHTML = '';
-  constellation.facts.forEach(fact => {
-    const factItem = document.createElement('li');
+  const factsList = document.querySelector(".facts-list");
+  factsList.innerHTML = "";
+  constellation.facts.forEach((fact) => {
+    const factItem = document.createElement("li");
     factItem.textContent = fact;
     factsList.appendChild(factItem);
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const selectEl = document.getElementById('constellationOption');
-  selectEl.addEventListener('change', async function() {
+document.addEventListener("DOMContentLoaded", () => {
+  const selectEl = document.getElementById("constellationOption");
+  selectEl.addEventListener("change", async function () {
     const selectedId = this.options[this.selectedIndex].value; // Get selected option value
     const selectedConstellation = await fetchConstellationDetails(selectedId);
     updateConstellationDetails(selectedConstellation);

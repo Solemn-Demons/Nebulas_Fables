@@ -9,7 +9,11 @@ async function signupFormHandler(event) {
   if (username && email && password) {
     const response = await fetch("/api/users", {
       method: "POST",
-      body: JSON.stringify({ username, email, password }),
+      body: JSON.stringify({
+        username: username,
+        email: email,
+        password: password,
+      }),
       headers: { "Content-Type": "application/json" },
     });
 
@@ -17,7 +21,9 @@ async function signupFormHandler(event) {
       //after they create account redirect to homepage after login
       document.location.replace("/homepage");
     } else {
-      alert(response.statusText);
+      alert(
+        "An account with this Username or Email already exists. Please try again."
+      );
     }
   }
 }

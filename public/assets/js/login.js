@@ -14,9 +14,9 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       //if successfully logged in redirect to whatever page we want
-      document.location.replace("/homepage");
+      document.location.replace("/");
     } else {
-      alert(response.statusText);
+      alert("Username or Password incorrect. Please try again.");
     }
   }
 };
