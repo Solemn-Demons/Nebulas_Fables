@@ -7,7 +7,7 @@ const logout = async () => {
 
   //if successfully logged out redirect wherever we want
   if (response.ok) {
-    document.location.replace("/homepage");
+    document.location.replace("/");
   } else {
     alert(response.statusText);
   }
