@@ -35,13 +35,13 @@
       </section>
       <div id="img-card"></div> -->
 
-      <nav class="nav"> 
+      <nav class="nav">
           <a href="/"><button type="button" class="main" id="Home">Home</button></a>
           <a href="directory"><button type="button" id="directory">Directory</button></a>
           <a href="NASA"><button type="button" id="NASA">NASA</button></a>
           <a href="mythos"><button type="button" id="Mythos">Mythos</button></a>
           <a href="about"><button type="button" id="About">About</button></a>
-          <a href="login"><button type="button" id="login">Login</button></a>
+           <a href="login"><button type="button" id="login">Login</button></a>
           <a href="signup"><button type="button" id="signup">Signup</button></a>
           <a href="/logout"><button type="button" id="logout">Logout</button></a>
       </nav>
@@ -55,29 +55,40 @@
   {{#if loggedIn}}
     <section>
       <!-- Constellation dropdown -->
-      
-      <div class="dropdown">
-      <label for="dropdown">Select a constellation:</label> 
+        <div class="dropdown">
+     <h2> <label for="dropdown">Select a constellation:</label> </h2>
           <select name="constellationOption" id="constellationOption"> 
             {{!-- for each loop for all constellations --}}
               <option value="Orion">Orion</option> 
               <option value="Scorpio">Scorpio</option> 
-          </select>
+              </select>
       </div>
+    
     </section>
+{{!-- homework activity for reference.
+
+<section class="card">
+  <a href="/gallery/{{id}}">
+    <header>{{name}}</header>
+    <img src="/images/{{paintings.[0].filename}}" alt="{{paintings.[0].description}}">
+  </a>
+</section> 
+--}}
+
+
 
     <!-- Constellation details -->
     {{!-- empty shell, use js to generate each --}}
     <h3 class="constellation-name">{{selectedConstellation.name}}</h3>
     <section class="flex-row justify-center">
-      <p>Stars:
+      <p><h3>Stars:</h3>
         <ul class="stars-list">
           {{#each selectedConstellation.stars}}
             <li>{{this}}</li>
           {{/each}}
         </ul>
       </p>
-      <p>Facts:
+      <p><h3>Facts:</h3>
         <ul class="facts-list">
           {{#each selectedConstellation.facts}}
             <li>{{this}}</li>
@@ -88,7 +99,7 @@
     
   {{else}}
     <!-- Provide a link to login if not logged in -->
-    <a href="/login">You must login first to view this page</a>
+    <h2><a href="/login">You must login first to view this page</a></h2>
   {{/if}}
 </section>
 

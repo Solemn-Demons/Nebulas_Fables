@@ -44,10 +44,10 @@ router.get("/login", (req, res) => {
 router.get("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
-      res.redirect("/login");
+      res.redirect("/");
     });
   } else {
-    res.redirect("/homepage");
+    res.redirect("/");
   }
 });
 
