@@ -26,21 +26,26 @@
 //     });
 // };
 
+//const constellationId = 
+
+
 // BETHS CODE TO REVIEW AND BLEND WITH ABOVE WHEN NOT SO TIRED
 // Fetch constellation details based on ID
 async function fetchConstellationDetails(constellationId) {
   const response = await fetch(`/api/constellation/${constellationId}`);
+  console.log(constellationId);
   const data = await response.json();
-  return data;
+  console.log(data);
+  //return data;
 }
 
 function updateConstellationDetails(constellation) {
   const constellationName = document.querySelector(".constellation-name");
-  constellationName.textContent = constellation.name;
-
+  constellationName.textContent = data.constellation_name;
+    console.log(constellationName)
   const starsList = document.querySelector(".stars-list");
   starsList.innerHTML = "";
-  constellation.stars.forEach((star) => {
+  data.star.star_name.forEach((star) => {
     const starItem = document.createElement("li");
     starItem.textContent = star;
     starsList.appendChild(starItem);

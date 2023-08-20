@@ -36,7 +36,7 @@ const { Constellation, Star, Facts } = require('../../models');
 //     });
 // });
 
-router.get('/:constellation_name', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
       const constellationData = await Constellation.findByPk(req.params.id, {
         include: [{ model: Facts }, { model: Star }],
@@ -46,10 +46,10 @@ router.get('/:constellation_name', async (req, res) => {
         res.status(404).json({ message: 'No Constellation with that ID!' });
         return;
       }
-  
+
       res.status(200).json(constellationData);
     } catch (err) {
-      res.status(500).json(err);
+      res.status(500).json((err) => console.log(err));
     }
   });
 
