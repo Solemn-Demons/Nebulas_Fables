@@ -46,6 +46,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
 
+
+app.use(['/directory', '/api/constellation/:constellation_name'], function (req, res, next){
+  next();
+});
 //connect to db before starting server
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () =>

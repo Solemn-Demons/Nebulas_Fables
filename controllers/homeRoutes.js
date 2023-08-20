@@ -7,29 +7,7 @@ router.get("/", async (req, res) => {
   res.render("homepage");
 });
 
-router.get("/", async (req, res) => {
-  try {
-    const constellationData = await Constellation.findAll({
-      include: [
-        {
-          model: Star,
-          model: Facts,
-        },
-      ],
-    });
 
-    const dbConstellation = constellationData.map((constellation) =>
-      constellation.get({ plain: true })
-    );
-    res.render("homepage", {
-      dbConstellation,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
 
 //get login from homepage
 router.get("/login", (req, res) => {
