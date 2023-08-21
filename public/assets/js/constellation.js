@@ -79,11 +79,16 @@ console.log(factOne);
 console.log(factTwo);
 console.log(factThree);
 
+// var fact = {
+//   factOne,
+//   factTwo,
+//   factThree,
+// };
 var fact = {
-  factOne,
-  factTwo,
-  factThree,
-};
+    "Fact One": factOne,
+    "Fact Two": factTwo,
+    "Fact Three": factThree,
+  };
 console.log(fact);
 
 const factsList = document.querySelector(".facts-list");
