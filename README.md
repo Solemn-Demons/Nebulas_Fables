@@ -28,6 +28,7 @@
 
     We will have future updates to this application which will include an animated models of stars and constellations. Be sure to create an account to stay up to date.
 
+
     ## Installation and Required Dependencies
 
     In building this application we used node.js, express, handlebars, dotenv, bcrypt, express-session, connect-session-sequelize, mysql2, threejs, and sequelzie.
@@ -45,7 +46,7 @@
     Please reach out if you have any questions regarding this application.
 
     - Name - Belicia Harvey
-    - Email -
+    - Email - bea.monkey18@gmail.com
     - GitHub - [Solemn-Demons](https://github.com/Solemn-Demons/)
 
     - Name - Michael Phillips
