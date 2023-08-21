@@ -59,7 +59,8 @@
      <h2> <label for="dropdown">Select a constellation:</label> </h2>
           <select name="constellationOption" id="constellationOption"> 
             {{!-- for each loop for all constellations --}}
-            <option value="0">--</option> 
+            {{!-- <option value="0">--</option>  --}}
+            <option value="" disabled selected>Select a constellation</option> <!-- Blank space option -->
               <option value="1">Orion</option> 
               <option value="2">Scorpio</option> 
               </select>
