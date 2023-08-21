@@ -59,6 +59,7 @@
      <h2> <label for="dropdown">Select a constellation:</label> </h2>
           <select name="constellationOption" id="constellationOption"> 
             {{!-- for each loop for all constellations --}}
+            <option value="0">--</option> 
               <option value="1">Orion</option> 
               <option value="2">Scorpio</option> 
               </select>
@@ -71,14 +72,14 @@
     <section class="flex-row justify-center">
       <p><h3>Stars:</h3>
         <ul class="stars-list">
-          {{#each selectedConstellation.Star.star_name}}
+          {{#each selectedConstellation.starList}}
             <li>{{this}}</li>
           {{/each}}
         </ul>
       </p>
       <p><h3>Facts:</h3>
         <ul class="facts-list">
-          {{#each selectedConstellation.Facts.[1, 2, 3]}}
+          {{#each selectedConstellation.factList}}
             <li>{{this}}</li>
           {{/each}}
         </ul>
