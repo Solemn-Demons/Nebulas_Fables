@@ -28,7 +28,6 @@
 
     We will have future updates to this application which will include an animated models of stars and constellations. Be sure to create an account to stay up to date.
 
-
     ## Installation and Required Dependencies
 
     In building this application we used node.js, express, handlebars, dotenv, bcrypt, express-session, connect-session-sequelize, mysql2, threejs, and sequelzie.
@@ -70,6 +69,8 @@
     ## Testing
 
     ## Deployed Linked
+
+    - https://nebulasfables-2b16dcff30ab.herokuapp.com/
 
     ## License
 
