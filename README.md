@@ -30,7 +30,7 @@
 
     ## Installation and Required Dependencies
 
-    In building this application we used node.js, express, handlebars, dotenv, bcrypt, express-session, connect-session-sequelize, mysql2, threejs, and sequelzie.
+    In building this application we used node.js, express, handlebars, dotenv, bcrypt, express-session, connect-session-sequelize, mysql2, threejs, and sequelize.
 
     User should run 'npm i' in cli to make sure all required dependcies are installed. After that user should run 'npm start' in cli if using locally.
 
